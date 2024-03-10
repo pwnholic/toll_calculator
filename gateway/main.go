@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/fulltimegodev/tolling/aggregator/client"
+	"github.com/lilwigy/tolling/aggregator/client"
 	"github.com/sirupsen/logrus"
 )
 

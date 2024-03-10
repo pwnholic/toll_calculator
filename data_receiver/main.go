@@ -7,8 +7,8 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/fulltimegodev/tolling/types"
 	"github.com/gorilla/websocket"
+	"github.com/lilwigy/tolling/types"
 )
 
 func main() {

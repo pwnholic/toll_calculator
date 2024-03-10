@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/fulltimegodev/tolling/aggregator/client"
+	"github.com/lilwigy/tolling/aggregator/client"
 )
 
 const (

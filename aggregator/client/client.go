@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 )
 
 type Client interface {

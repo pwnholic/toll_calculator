@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 )
 
 type MemoryStore struct {

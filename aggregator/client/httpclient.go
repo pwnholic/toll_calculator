@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 	"github.com/sirupsen/logrus"
 )
 

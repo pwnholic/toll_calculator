@@ -3,14 +3,14 @@ package client
 import (
 	"context"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
 
 type GRPCClient struct {
-	Endpoint string
 	client   types.AggregatorClient
+	Endpoint string
 }
 
 func NewGRPCClient(endpoint string) (*GRPCClient, error) {

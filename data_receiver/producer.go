@@ -2,9 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/v2/kafka"
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 )
 
 type DataProducer interface {
@@ -27,9 +28,9 @@ func NewKafkaProducer(topic string) (DataProducer, error) {
 			switch ev := e.(type) {
 			case *kafka.Message:
 				if ev.TopicPartition.Error != nil {
-					// fmt.Printf("Delivery failed: %v\n", ev.TopicPartition)
+					fmt.Printf("Delivery failed: %v\n", ev.TopicPartition)
 				} else {
-					// fmt.Printf("Delivered message to %v\n", ev.TopicPartition)
+					fmt.Printf("Delivered message to %v\n", ev.TopicPartition)
 				}
 			}
 		}

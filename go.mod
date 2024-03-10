@@ -1,4 +1,4 @@
-module github.com/fulltimegodev/tolling
+module github.com/lilwigy/tolling
 
 go 1.20
 

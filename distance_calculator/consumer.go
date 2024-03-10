@@ -6,17 +6,17 @@ import (
 	"time"
 
 	"github.com/confluentinc/confluent-kafka-go/v2/kafka"
-	"github.com/fulltimegodev/tolling/aggregator/client"
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/aggregator/client"
+	"github.com/lilwigy/tolling/types"
 	"github.com/sirupsen/logrus"
 )
 
 // This can also be called KafkaTransport.
 type KafkaConsumer struct {
-	consumer    *kafka.Consumer
-	isRunning   bool
 	calcService CalculatorServicer
 	aggClient   client.Client
+	consumer    *kafka.Consumer
+	isRunning   bool
 }
 
 func NewKafkaConsumer(topic string, svc CalculatorServicer, aggClient client.Client) (*KafkaConsumer, error) {
@@ -54,7 +54,7 @@ func (c *KafkaConsumer) readMessageLoop() {
 			continue
 		}
 		var data types.OBUData
-		if err := json.Unmarshal(msg.Value, &data); err != nil {
+		if err = json.Unmarshal(msg.Value, &data); err != nil {
 			logrus.Errorf("JSON serialization error: %s", err)
 			logrus.WithFields(logrus.Fields{
 				"err":       err,
@@ -73,7 +73,7 @@ func (c *KafkaConsumer) readMessageLoop() {
 			ObuID: int32(data.OBUID),
 		}
 		if err := c.aggClient.Aggregate(context.Background(), req); err != nil {
-			logrus.Errorf("aggregate error:", err)
+			logrus.Errorf("aggregate error: %v", err)
 			continue
 		}
 	}

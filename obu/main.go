@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/fulltimegodev/tolling/types"
 	"github.com/gorilla/websocket"
+	"github.com/lilwigy/tolling/types"
 )
 
 const wsEndpoint = "ws://127.0.0.1:30000/ws"

@@ -6,25 +6,25 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 
-	"github.com/fulltimegodev/tolling/go-kit-example/aggsvc/aggendpoint"
-	"github.com/fulltimegodev/tolling/go-kit-example/aggsvc/aggservice"
 	"github.com/go-kit/kit/circuitbreaker"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/ratelimit"
 	"github.com/go-kit/kit/transport"
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/go-kit/log"
+	"github.com/lilwigy/tolling/go-kit-example/aggsvc/aggendpoint"
+	"github.com/lilwigy/tolling/go-kit-example/aggsvc/aggservice"
 	"github.com/sony/gobreaker"
 	"golang.org/x/time/rate"
 )
 
-func NewHTTPClient(instance string, logger log.Logger) (aggservice.Service, error) {
+func NewHTTPClient(instance string, _ log.Logger) (aggservice.Service, error) {
 	// Quickly sanitize the instance string.
 	if !strings.HasPrefix(instance, "http") {
 		instance = "http://" + instance
@@ -91,7 +91,7 @@ func NewHTTPClient(instance string, logger log.Logger) (aggservice.Service, erro
 	}, nil
 }
 
-func errorEncoder(ctx context.Context, err error, w http.ResponseWriter) {
+func errorEncoder(_ context.Context, err error, _ http.ResponseWriter) {
 	fmt.Println("this is coming from the error encoder ->", err)
 }
 
@@ -168,6 +168,6 @@ func encodeHTTPGenericRequest(_ context.Context, r *http.Request, request interf
 	if err := json.NewEncoder(&buf).Encode(request); err != nil {
 		return err
 	}
-	r.Body = ioutil.NopCloser(&buf)
+	r.Body = io.NopCloser(&buf)
 	return nil
 }

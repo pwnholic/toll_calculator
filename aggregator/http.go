@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/sirupsen/logrus"
@@ -16,8 +16,8 @@ import (
 type HTTPFunc func(http.ResponseWriter, *http.Request) error
 
 type APIError struct {
-	Code int
 	Err  error
+	Code int
 }
 
 // Error implements the Error interface

@@ -3,7 +3,7 @@ package main
 import (
 	"math"
 
-	"github.com/fulltimegodev/tolling/types"
+	"github.com/lilwigy/tolling/types"
 )
 
 // We like the end our interface with (er) :shrug:
@@ -29,5 +29,5 @@ func (s *CalculatorService) CalculateDistance(data types.OBUData) (float64, erro
 }
 
 func calculateDistance(x1, y1, x2, y2 float64) float64 {
-	return math.Sqrt(math.Pow(x2-x1, 2) + math.Pow(y2-y1, 2))
+	return math.Sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1))
 }

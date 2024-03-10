@@ -3,8 +3,8 @@ package aggservice
 import (
 	"context"
 
-	"github.com/fulltimegodev/tolling/types"
 	"github.com/go-kit/log"
+	"github.com/lilwigy/tolling/types"
 )
 
 const basePrice = 3.15

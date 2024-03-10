@@ -4,13 +4,13 @@ import (
 	"context"
 	"time"
 
-	"github.com/fulltimegodev/tolling/go-kit-example/aggsvc/aggservice"
-	"github.com/fulltimegodev/tolling/types"
 	"github.com/go-kit/kit/circuitbreaker"
 	"github.com/go-kit/kit/endpoint"
 	"github.com/go-kit/kit/metrics/prometheus"
 	"github.com/go-kit/kit/ratelimit"
 	"github.com/go-kit/log"
+	"github.com/lilwigy/tolling/go-kit-example/aggsvc/aggservice"
+	"github.com/lilwigy/tolling/types"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
 	"github.com/sony/gobreaker"
 	"golang.org/x/time/rate"
@@ -70,10 +70,10 @@ type AggregateResponse struct {
 }
 
 type CalculateResponse struct {
+	Err           error   `json:"err"`
 	OBUID         int     `json:"obuID"`
 	TotalDistance float64 `json:"totalDistance"`
 	TotalAmount   float64 `json:"totalAmount"`
-	Err           error   `json:"err"`
 }
 
 func (s Set) Calculate(ctx context.Context, obuID int) (*types.Invoice, error) {
