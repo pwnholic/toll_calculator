@@ -8,7 +8,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 )
 
 func main() {

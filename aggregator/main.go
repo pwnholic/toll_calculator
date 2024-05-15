@@ -9,8 +9,8 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/lilwigy/tolling/types"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/pwnholic/tolling/types"
 	"google.golang.org/grpc"
 )
 

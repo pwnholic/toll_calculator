@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/go-kit/log"
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 )
 
 const basePrice = 3.15

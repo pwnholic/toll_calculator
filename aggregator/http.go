@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/lilwigy/tolling/types"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
+	"github.com/pwnholic/tolling/types"
 	"github.com/sirupsen/logrus"
 )
 

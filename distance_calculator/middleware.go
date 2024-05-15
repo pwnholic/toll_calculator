@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 	"github.com/sirupsen/logrus"
 )
 

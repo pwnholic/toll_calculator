@@ -3,7 +3,7 @@ package main
 import (
 	"math"
 
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 )
 
 // We like the end our interface with (er) :shrug:

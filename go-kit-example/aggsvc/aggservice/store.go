@@ -3,7 +3,7 @@ package aggservice
 import (
 	"fmt"
 
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 )
 
 type MemoryStore struct {

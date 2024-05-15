@@ -10,8 +10,8 @@ import (
 	"github.com/go-kit/kit/ratelimit"
 	"github.com/go-kit/log"
 	"github.com/lilwigy/tolling/go-kit-example/aggsvc/aggservice"
-	"github.com/lilwigy/tolling/types"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
+	"github.com/pwnholic/tolling/types"
 	"github.com/sony/gobreaker"
 	"golang.org/x/time/rate"
 )

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/go-kit/log"
-	"github.com/lilwigy/tolling/types"
+	"github.com/pwnholic/tolling/types"
 )
 
 type Middleware func(Service) Service
